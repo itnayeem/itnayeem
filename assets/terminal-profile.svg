@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a12" />
+      <stop offset="50%" stop-color="#0b1021" />
+      <stop offset="100%" stop-color="#070b14" />
+    </linearGradient>
+
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#141e33" />
+    </linearGradient>
+
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <linearGradient id="logo-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8c00" />
+      <stop offset="100%" stop-color="#ff5500" />
+    </linearGradient>
+
+    <!-- Filters for Glow -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.65" />
+    </filter>
+
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    
+    .key { fill: #38bdf8; font-weight: 600; font-size: 13.5px; }
+    .val { fill: #e2e8f0; font-size: 13px; }
+    .val-highlight { fill: #ffffff; font-weight: bold; font-size: 13.5px; }
+    .val-cyan { fill: #00f0ff; font-weight: 600; font-size: 13px; }
+    .val-green { fill: #34d399; font-weight: 600; font-size: 13px; }
+    .val-orange { fill: #fb923c; font-size: 12.8px; }
+    .val-status { fill: #10b981; font-weight: bold; font-size: 13px; }
+    
+    .comment { fill: #64748b; font-size: 12px; }
+    .prompt-user { fill: #10b981; font-weight: bold; font-size: 14px; }
+    .prompt-host { fill: #38bdf8; font-weight: bold; font-size: 14px; }
+    .prompt-cmd { fill: #f8fafc; font-size: 14px; }
+    
+    .cursor { fill: #00f0ff; animation: blink 1s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .pulse-ring {
+      animation: pulse 2.5s infinite;
+      transform-origin: center;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+      100% { opacity: 0.3; }
+    }
+  </style>
+
+  <!-- Outer Card Container with Glow -->
+  <rect x="10" y="10" width="900" height="460" rx="14" fill="url(#bg-grad)" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.35" filter="url(#shadow)" />
+
+  <!-- Inner Ambient Neon Accent Top -->
+  <line x1="30" y1="10" x2="890" y2="10" stroke="url(#cyan-glow)" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Terminal Window Titlebar -->
+  <rect x="10" y="10" width="900" height="42" rx="14" fill="url(#header-grad)" stroke="#1e293b" stroke-width="1" />
+  <!-- Straighten bottom corners of header -->
+  <rect x="10" y="38" width="900" height="14" fill="url(#header-grad)" />
+  <line x1="10" y1="52" x2="910" y2="52" stroke="#1e293b" stroke-width="1" />
+
+  <!-- macOS Window Control Buttons -->
+  <circle cx="36" cy="31" r="6.5" fill="#ff5f56" stroke="#e0443e" stroke-width="0.5" />
+  <circle cx="58" cy="31" r="6.5" fill="#ffbd2e" stroke="#dea123" stroke-width="0.5" />
+  <circle cx="80" cy="31" r="6.5" fill="#27c93f" stroke="#1aab29" stroke-width="0.5" />
+
+  <!-- Terminal Title -->
+  <g class="font-mono" font-size="12" fill="#94a3b8" text-anchor="middle">
+    <text x="460" y="35">nayeem@dev-macbook: ~ (zsh) • neofetch --profile</text>
+  </g>
+  <g class="font-mono" font-size="11" fill="#64748b" text-anchor="end">
+    <text x="890" y="35">UTF-8 • 80x24</text>
+  </g>
+
+  <!-- Prompt Command Line -->
+  <g class="font-mono">
+    <text x="35" y="84">
+      <tspan class="prompt-user">nayeem</tspan><tspan fill="#64748b">@</tspan><tspan class="prompt-host">dev-macbook</tspan> <tspan fill="#a855f7">~</tspan> <tspan fill="#38bdf8">%</tspan> <tspan class="prompt-cmd">neofetch --profile</tspan>
+    </text>
+  </g>
+
+  <!-- Decorative Separator -->
+  <line x1="35" y1="100" x2="885" y2="100" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4" />
+
+  <!-- ================= LEFT COLUMN: IT NAYEEM LOGO / BADGE ART ================= -->
+  <g transform="translate(45, 125)">
+    <!-- Tech Shield Outer Border -->
+    <path d="M 80 15 L 145 45 L 145 130 Q 145 195 80 230 Q 15 195 15 130 L 15 45 Z" fill="#0c1222" stroke="#00f0ff" stroke-width="1.8" filter="url(#neon-glow)" opacity="0.9" />
+
+    <!-- Stylized "IT" in Blue -->
+    <path d="M 40 50 L 120 50 L 120 70 L 92 70 L 92 145 L 68 145 L 68 70 L 40 70 Z" fill="#0084ff" />
+    <circle cx="80" cy="35" r="7" fill="#00f0ff" />
+
+    <!-- Stylized "N" in Orange -->
+    <path d="M 72 85 L 94 85 L 122 155 L 122 85 L 138 85 L 138 175 L 118 175 L 88 102 L 88 175 L 72 175 Z" fill="url(#logo-orange)" />
+
+    <!-- Brand Text Below Shield -->
+    <text x="80" y="255" class="font-sans" font-weight="900" font-size="15" fill="#00f0ff" text-anchor="middle" letter-spacing="2">IT NAYEEM</text>
+    <text x="80" y="272" class="font-mono" font-size="9.5" fill="#94a3b8" text-anchor="middle" letter-spacing="1">itnayeem.com.bd</text>
+
+    <!-- Color Palette Blocks (Like classic neofetch) -->
+    <g transform="translate(15, 290)">
+      <rect x="0" y="0" width="16" height="11" rx="2" fill="#000" />
+      <rect x="18" y="0" width="16" height="11" rx="2" fill="#ef4444" />
+      <rect x="36" y="0" width="16" height="11" rx="2" fill="#22c55e" />
+      <rect x="54" y="0" width="16" height="11" rx="2" fill="#eab308" />
+      <rect x="72" y="0" width="16" height="11" rx="2" fill="#3b82f6" />
+      <rect x="90" y="0" width="16" height="11" rx="2" fill="#a855f7" />
+      <rect x="108" y="0" width="16" height="11" rx="2" fill="#00f0ff" />
+      <rect x="126" y="0" width="16" height="11" rx="2" fill="#ffffff" />
+    </g>
+  </g>
+
+  <!-- ================= RIGHT COLUMN: NEOFETCH PROFILE DATA ================= -->
+  <g transform="translate(235, 125)" class="font-mono">
+    
+    <!-- Row 1: OS -->
+    <text x="0" y="20">
+      <tspan class="key">OS</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val">macOS Sonoma / Arch Linux / Ubuntu 24.04 LTS</tspan>
+    </text>
+
+    <!-- Row 2: Role -->
+    <text x="0" y="46">
+      <tspan class="key">Role</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val-highlight">Full Stack Web Developer &amp; CEO</tspan>
+    </text>
+
+    <!-- Row 3: Company -->
+    <text x="0" y="72">
+      <tspan class="key">Company</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val-cyan">IT Nayeem (https://www.itnayeem.com.bd)</tspan>
+    </text>
+
+    <!-- Row 4: Experience -->
+    <text x="0" y="98">
+      <tspan class="key">Experience</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val">5+ Years Production Software Engineering</tspan>
+    </text>
+
+    <!-- Row 5: Location -->
+    <text x="0" y="124">
+      <tspan class="key">Location</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val">Meherpur, Bangladesh 🇧🇩</tspan>
+    </text>
+
+    <!-- Row 6: Status -->
+    <text x="0" y="150">
+      <tspan class="key">Status</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val-status">🟢 Available for contract &amp; full-time roles</tspan>
+    </text>
+
+    <!-- Separator Line -->
+    <line x1="0" y1="168" x2="650" y2="168" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Row 7: Frontend -->
+    <text x="0" y="194">
+      <tspan class="key">Frontend</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val-highlight">React, Next.js, JavaScript (ES6+), HTML5, CSS3, Tailwind</tspan>
+    </text>
+
+    <!-- Row 8: Backend -->
+    <text x="0" y="220">
+      <tspan class="key">Backend</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val">Node.js, Express, PHP (Laravel), Java, C / C++</tspan>
+    </text>
+
+    <!-- Row 9: Databases -->
+    <text x="0" y="246">
+      <tspan class="key">Databases</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val-green">Supabase, PostgreSQL, MySQL, MongoDB</tspan>
+    </text>
+
+    <!-- Row 10: Services -->
+    <text x="0" y="272">
+      <tspan class="key">Services</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val-orange">Web Dev, App Dev, Domain Hosting, Dedicated Server, USA LLC</tspan>
+    </text>
+
+    <!-- Row 11: Contact -->
+    <text x="0" y="298">
+      <tspan class="key">Contact</tspan>
+      <tspan x="110" fill="#64748b">:</tspan>
+      <tspan x="125" class="val-cyan">support@itnayeem.com.bd | +8809649117799</tspan>
+    </text>
+
+  </g>
+
+  <!-- Bottom Blinking Cursor Line -->
+  <g class="font-mono" transform="translate(35, 442)">
+    <text x="0" y="0">
+      <tspan fill="#38bdf8">nayeem@dev-macbook</tspan> <tspan fill="#10b981">~ %</tspan>
+    </text>
+    <rect x="200" y="-12" width="8" height="15" class="cursor" />
+  </g>
+</svg>

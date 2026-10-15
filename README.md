@@ -15,6 +15,14 @@
 
 ---
 
+<!-- High-Definition Graphical macOS Neofetch Terminal Profile -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/itnayeem/itnayeem/main/assets/terminal-profile.svg" alt="MD. Nahedul Khan Nayeem Neofetch Terminal Profile" width="100%" />
+</p>
+
+<details>
+<summary><b>💻 Click to expand plain text terminal specs</b></summary>
+
 ```bash
 nayeem@dev-macbook ~ % neofetch --profile
 -----------------------------------------
@@ -31,6 +39,7 @@ Databases   : Supabase, PostgreSQL, MySQL, MongoDB
 Services    : Web Development, App Development, Domain & Hosting, Server Setup, USA LLC
 Contact     : support@itnayeem.com.bd | +8809649117799
 ```
+</details>
 
 ---
 
